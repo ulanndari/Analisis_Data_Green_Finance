@@ -25,16 +25,10 @@ Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 3. Default_Risk_Score - Skor risiko gagal bayar (0-100)
 4. Revenue_Stream - Perkiraan arus kas masuk tahunan dari proyek
 5. Green_Bond_Spread - Selisih imbal hasil antara obligasi hijau vs biasa. Nilai negatif = greenium
-#### #### 2.1.1 Analisis Finansial: GNPV dan Green Bond 💸
-
+#### 1.1 Analisis Finansial: GNPV dan Green Bond 💸
 Untuk menilai apakah proyek hijau ini **layak dibiayai**, kita hitung sesuatu yang namanya **Green Net Present Value (GNPV)**.
-
----
-
 ##### 🔍 Apa Itu GNPV?
-
 GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita **tambahkan manfaat lingkungan** (seperti pengurangan emisi CO₂) ke dalam arus kas proyek.
-
 **Rumus GNPV:**
 
 $$
@@ -46,9 +40,7 @@ $$
 - `r`: Tingkat diskonto (misal: 5%)  
 - `N`: Umur proyek (misal: 10 tahun)  
 - `I₀`: Investasi awal proyek
-
 ---
-
 ##### ⚙️ Contoh Perhitungan Manual
 
 ```python
@@ -69,8 +61,68 @@ print("GNPV: Rp", round(gnpv))
 📤 Output:
 GNPV: Rp 93043373230
 ✅ Proyek ini LAYAK secara finansial dan lingkungan
+---
+##### 🧮 Perhitungan Otomatis untuk Semua Proyek
+```python
+import pandas as pd
 
+df = pd.read_csv("Financial_Dataset.csv")
 
+umur_proyek = 10
+diskonto = 0.05
+emisi_ton_per_tahun = 100
+harga_karbon = 96000  # berdasarkan pasar karbon Indonesia (2025)
+
+def hitung_gnpv(revenue, investment):
+    eksternalitas = emisi_ton_per_tahun * harga_karbon
+    gnpv = 0
+    for t in range(1, umur_proyek + 1):
+        nilai = (revenue + eksternalitas) / ((1 + diskonto) ** t)
+        gnpv += nilai
+    return round(gnpv - investment, 2)
+
+df["GNPV_Rp"] = df.apply(lambda row: hitung_gnpv(row["Revenue_Stream"], row["Investment_Cost"]), axis=1)
+df["Kelayakan"] = df["GNPV_Rp"].apply(lambda x: "Layak ✅" if x > 0 else "Tidak Layak ❌")
+```
+---
+##### 1.3 📉 Evaluasi Green Bond Spread (Greenium)
+```python
+if "Green_Bond_Spread" in df.columns:
+    df["Greenium_Status"] = df["Green_Bond_Spread"].apply(lambda x: "Greenium ✅" if x < 0 else "Normal ⚠️")
+else:
+    df["Greenium_Status"] = "Data Tidak Ada"
+```
+---
+##### 📘 Keterangan:
+- Greenium artinya investor rela terima imbal hasil lebih rendah karena proyek ini ramah lingkungan 🌱
+- Kalau tidak ada greenium, mungkin proyek masih dianggap berisiko atau kurang menarik
+##### 📌 Kesimpulan Singkat:
+- GNPV bantu kita nilai kelayakan proyek dari sisi finansial + lingkungan
+- Green Bond Spread bantu lihat apakah proyek menarik bagi investor hijau
+---
+##### 📜 Regulasi Terkait & Tips Tambahan
+
+✅ **Regulasi Penting dari OJK (Otoritas Jasa Keuangan):**
+
+- **Taksonomi Hijau Indonesia (THI) Edisi 1.0 (2022)**  
+  Merupakan acuan utama untuk mengklasifikasikan proyek sebagai "hijau". Kelayakan finansial (misalnya GNPV positif) harus sejalan dengan kriteria dalam THI.
+
+- **POJK No. 60/POJK.04/2017**  
+  Aturan khusus tentang penerbitan *Green Bond*. Termasuk di dalamnya kewajiban pelaporan dampak lingkungan yang relevan dengan perhitungan seperti GNPV.
+
+- **POJK No. 51/POJK.03/2017**  
+  Mengatur tentang Rencana Aksi Keuangan Berkelanjutan (RAKB). GNPV dapat digunakan sebagai bagian dari analisis kelayakan proyek dalam laporan ini.
+---
+
+##### 💡 **Tips Teknis:**
+
+- **Valuasi Eksternalitas (`Eₜ`)**  
+  Untuk menghitung manfaat lingkungan seperti pengurangan emisi CO₂ atau penghematan air, gunakan sumber harga yang kredibel. Contoh: pasar karbon Indonesia, laporan World Bank, atau lembaga lingkungan nasional.
+
+- **Greenium (`Green_Bond_Spread`)**  
+  Jika `Green_Bond_Spread` bernilai negatif, artinya proyek mendapat **greenium**. Ini menunjukkan investor bersedia menerima imbal hasil lebih rendah karena percaya proyek tersebut berdampak positif bagi lingkungan.  
+  ✔️ Greenium = sinyal bahwa proyek ramah lingkungan = lebih disukai pasar!
+---
 ### 🌿 2. Environmental Dataset
 Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis keberlanjutan.
 1. CO2_Reduction - Emisi CO₂ yang dikurangi (ton/tahun)
