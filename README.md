@@ -17,7 +17,7 @@ ________________________________________________________________________________
 Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bukan cuma dari sisi duit 💸, tapi juga dari sisi lingkungan 🌍.
 Yuk kita bahas dari awal sampai visualisasi datanya!
 ### 📚 Penjelasan Dataset yang Dipakai
-Sebelum masuk ke rumus dan kodingan, yuk kenalan dulu sama jenis-jenis data yang kita pakai. Proyek ini pakai pendekatan yang menyeluruh—gak cuma lihat aspek finansial aja, tapi juga dampak lingkungan, sosial, ekonomi, dan lokasi proyek. Berikut penjelasan singkat tiap bagian:
+Sebelum masuk ke rumus dan kodingan, yuk kenalan dulu sama jenis-jenis data yang kita pakai. Proyek ini pakai pendekatan yang menyeluruh, gak cuma lihat aspek finansial aja, tapi juga dampak lingkungan, sosial, ekonomi, dan lokasi proyek. Berikut penjelasan singkat tiap bagian:
 ### 📊 1. Financial Dataset
 Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 1. Investment_Amount - Jumlah uang yang diinvestasikan (Rp)
