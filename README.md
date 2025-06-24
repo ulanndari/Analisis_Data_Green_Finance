@@ -32,11 +32,11 @@ GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita tambahkan ma
 ##### Rumus GNPV: GNPV = ∑ [(CFₜ + Eₜ) / (1 + r)ᵗ] - I₀
 
 keterangan :
-CFₜ: Arus kas masuk tahunan
-Eₜ: Nilai moneter dari manfaat lingkungan (misalnya dari pengurangan emisi CO₂)
-r: Tingkat diskonto (contoh: 5%)
-N: Umur proyek (misal: 10 tahun)
-I₀: Investasi awal proyek
+- CFₜ: Arus kas masuk tahunan
+- Eₜ: Nilai moneter dari manfaat lingkungan (misalnya dari pengurangan emisi CO₂)
+- r: Tingkat diskonto (contoh: 5%)
+- N: Umur proyek (misal: 10 tahun)
+- I₀: Investasi awal proyek
 
 
 ### 🌿 2. Environmental Dataset
