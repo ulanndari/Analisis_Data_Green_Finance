@@ -18,21 +18,35 @@ Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bu
 Yuk kita bahas dari awal sampai visualisasi datanya!
 ### 📚 Penjelasan Dataset yang Dipakai
 Sebelum masuk ke rumus dan kodingan, yuk kenalan dulu sama jenis-jenis data yang kita pakai. Proyek ini pakai pendekatan yang menyeluruh—gak cuma lihat aspek finansial aja, tapi juga dampak lingkungan, sosial, ekonomi, dan lokasi proyek. Berikut penjelasan singkat tiap bagian:
-#### 📊 1. Financial Dataset
+### 📊 1. Financial Dataset
 Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 1. Investment_Amount - Jumlah uang yang diinvestasikan (Rp)
 2. Loan_Interest_Rate - Suku bunga pinjaman (% per tahun)
 3. Default_Risk_Score - Skor risiko gagal bayar (0-100)
 4. Revenue_Stream - Perkiraan arus kas masuk tahunan dari proyek
 5. Green_Bond_Spread - Selisih imbal hasil antara obligasi hijau vs biasa. Nilai negatif = greenium
-#### 🌿 2. Environmental Dataset
+#### 1.1 Analisis Finansial: GNPV dan Green Bond 💸
+Untuk menilai apakah proyek hijau ini layak dibiayai, kita hitung sesuatu yang namanya Green Net Present Value (GNPV).
+##### 🔍 Apa Itu GNPV?
+GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita tambahkan manfaat lingkungan (seperti pengurangan emisi CO₂) ke dalam arus kas proyek.
+##### Rumus GNPV: GNPV = ∑ [(CFₜ + Eₜ) / (1 + r)ᵗ] - I₀
+
+keterangan :
+CFₜ: Arus kas masuk tahunan
+Eₜ: Nilai moneter dari manfaat lingkungan (misalnya dari pengurangan emisi CO₂)
+r: Tingkat diskonto (contoh: 5%)
+N: Umur proyek (misal: 10 tahun)
+I₀: Investasi awal proyek
+
+
+### 🌿 2. Environmental Dataset
 Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis keberlanjutan.
 1. CO2_Reduction - Emisi CO₂ yang dikurangi (ton/tahun)
 2. Energy_Output - Energi bersih yang dihasilkan (kWh/tahun)
 3. Environmental_Risk_Index - Skor risiko lingkungan proyek (0–100)
 4. Konteks_Lingkungan - Ringkasan isu lingkungan di lokasi proyek
 5. Peringkat_Dampak - Peringkat keseluruhan dampak proyek (misalnya: Rendah, Sedang, Tinggi)
-#### 🧝‍♂️ 3. Social Dataset
+### 🧝‍♂️ 3. Social Dataset
 Aspek sosial itu penting! Ini data yang menilai apakah proyek bermanfaat atau berisiko buat masyarakat sekitar.
 1. Job_Creation - Jumlah pekerjaan yang diciptakan
 2. Community_Involvement - Level partisipasi masyarakat (rendah–tinggi)
