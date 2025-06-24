@@ -11,10 +11,10 @@ Green Finance adalah pembiayaan proyek yang mendukung keberlanjutan lingkungan. 
 2. Mendorong pertumbuhan ekonomi hijau dan lapangan kerja hijau 💼
 3. Menekan risiko lingkungan dalam portofolio investasi
 4. Mendorong inovasi teknologi hijau 🚀
-______________________________________________________________________________________________________________________________________________________________________________________________
-## Hai Para Eco Techno Leader, mari berpetualang bersama. saya akan mempublikasikan tugas struktur SELF DIRECTED LEARNING dengan SHARING SESSION and RESEARCH DATA GREEN FINANCE© 2025 bersama Bapak Arry Hutomo
-______________________________________________________________________________________________________________________________________________________________________________________________
-👋Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bukan cuma dari sisi duit 💸, tapi juga dari sisi lingkungan 🌍.
+__________________________________________________________________________________________________________________________________________________________________________________________
+## 👋 Hai Para Eco Techno Leader, mari berpetualang bersama. saya akan mempublikasikan tugas struktur SELF DIRECTED LEARNING dengan SHARING SESSION and RESEARCH DATA GREEN FINANCE© 2025 bersama Bapak Arry Hutomo
+__________________________________________________________________________________________________________________________________________________________________________________________
+Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bukan cuma dari sisi duit 💸, tapi juga dari sisi lingkungan 🌍.
 Yuk kita bahas dari awal sampai visualisasi datanya!
 ### 📚 Penjelasan Dataset yang Dipakai
 Sebelum masuk ke rumus dan kodingan, yuk kenalan dulu sama jenis-jenis data yang kita pakai. Proyek ini pakai pendekatan yang menyeluruh—gak cuma lihat aspek finansial aja, tapi juga dampak lingkungan, sosial, ekonomi, dan lokasi proyek. Berikut penjelasan singkat tiap bagian:
