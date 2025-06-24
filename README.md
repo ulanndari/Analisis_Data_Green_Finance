@@ -25,19 +25,33 @@ Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 3. Default_Risk_Score - Skor risiko gagal bayar (0-100)
 4. Revenue_Stream - Perkiraan arus kas masuk tahunan dari proyek
 5. Green_Bond_Spread - Selisih imbal hasil antara obligasi hijau vs biasa. Nilai negatif = greenium
-#### 1.1 Analisis Finansial: GNPV dan Green Bond 💸
-Untuk menilai apakah proyek hijau ini layak dibiayai, kita hitung sesuatu yang namanya Green Net Present Value (GNPV).
-##### 🔍 Apa Itu GNPV?
-GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita tambahkan manfaat lingkungan (seperti pengurangan emisi CO₂) ke dalam arus kas proyek.
-##### Rumus GNPV: GNPV = ∑ [(CFₜ + Eₜ) / (1 + r)ᵗ] - I₀
+#### #### 2.1.1 Analisis Finansial: GNPV dan Green Bond 💸
 
-keterangan :
-- CFₜ: Arus kas masuk tahunan
-- Eₜ: Nilai moneter dari manfaat lingkungan (misalnya dari pengurangan emisi CO₂)
-- r: Tingkat diskonto (contoh: 5%)
-- N: Umur proyek (misal: 10 tahun)
-- I₀: Investasi awal proyek
+Untuk menilai apakah proyek hijau ini **layak dibiayai**, kita hitung sesuatu yang namanya **Green Net Present Value (GNPV)**.
+
+---
+
+##### 🔍 Apa Itu GNPV?
+
+GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita **tambahkan manfaat lingkungan** (seperti pengurangan emisi CO₂) ke dalam arus kas proyek.
+
+**Rumus GNPV:**
+
+$$
+\text{GNPV} = \sum_{t=1}^{N} \frac{(CF_t + E_t)}{(1 + r)^t} - I_0
+$$
+
+- `CFₜ`: Arus kas masuk tahunan  
+- `Eₜ`: Nilai moneter dari manfaat lingkungan  
+- `r`: Tingkat diskonto (misal: 5%)  
+- `N`: Umur proyek (misal: 10 tahun)  
+- `I₀`: Investasi awal proyek
+
+---
+
 ##### ⚙️ Contoh Perhitungan Manual
+
+```python
 investasi = 100_000_000_000       # I₀
 cashflow = 20_000_000_000         # CFₜ
 eksternalitas = 5_000_000_000     # Eₜ
@@ -51,6 +65,10 @@ for t in range(1, N + 1):
 gnpv -= investasi
 
 print("GNPV: Rp", round(gnpv))
+
+📤 Output:
+GNPV: Rp 93043373230
+✅ Proyek ini LAYAK secara finansial dan lingkungan
 
 
 ### 🌿 2. Environmental Dataset
