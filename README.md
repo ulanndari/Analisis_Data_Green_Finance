@@ -57,10 +57,11 @@ for t in range(1, N + 1):
 gnpv -= investasi
 
 print("GNPV: Rp", round(gnpv))
-```
 📤 Output:
 GNPV: Rp 93043373230
 ✅ Proyek ini LAYAK secara finansial dan lingkungan
+```
+
 ---
 ##### 🧮 Perhitungan Otomatis untuk Semua Proyek
 ```python
