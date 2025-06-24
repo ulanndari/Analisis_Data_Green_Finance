@@ -37,6 +37,20 @@ keterangan :
 - r: Tingkat diskonto (contoh: 5%)
 - N: Umur proyek (misal: 10 tahun)
 - I₀: Investasi awal proyek
+##### ⚙️ Contoh Perhitungan Manual
+investasi = 100_000_000_000       # I₀
+cashflow = 20_000_000_000         # CFₜ
+eksternalitas = 5_000_000_000     # Eₜ
+r = 0.05                          # diskonto
+N = 10                            # umur proyek
+
+gnpv = 0
+for t in range(1, N + 1):
+    nilai_sekarang = (cashflow + eksternalitas) / ((1 + r) ** t)
+    gnpv += nilai_sekarang
+gnpv -= investasi
+
+print("GNPV: Rp", round(gnpv))
 
 
 ### 🌿 2. Environmental Dataset
