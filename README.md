@@ -146,9 +146,8 @@ Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis k
 5. Peringkat_Dampak - Peringkat keseluruhan dampak proyek (misalnya: Rendah, Sedang, Tinggi)
 #### 🔢 Perhitungan CROI (Carbon Return on Investment)
 CROI digunakan untuk mengukur efisiensi investasi dalam pengurangan emisi karbon:
-$$
-\text{CROI = (Rt × Pc × N) / I₀}
-$$
+```math
+\text{CROI} = \frac{R_t \times P_c \times N}{I_0}
 
   Keterangan:
 - `Rt`: Pengurangan emisi tahunan (`CO2_Emissions_Reduction`)
