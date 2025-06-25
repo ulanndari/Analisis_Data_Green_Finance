@@ -154,6 +154,44 @@ df["Rekomendasi_DNSH"] = df.apply(
 ---
 #### 📈 Visualisasi Beyond Carbon
 ![image](https://github.com/user-attachments/assets/d4138d16-d6ad-4955-81bb-125cd2d83005)
+Grafik ini menunjukkan dua aspek penting dari proyek energi hijau yang sering terlupakan, yaitu:
+
+1. **Penghematan Air (Water Savings)**
+2. **Skor Dampak Terhadap Keanekaragaman Hayati (Biodiversity Score)**
+
+---
+
+### 💧 Apa yang Ditampilkan Grafik?
+
+- **Batang biru (Water Savings):** Jumlah air yang berhasil dihemat oleh masing-masing proyek (dalam liter).
+- **Garis oranye dengan titik (Biodiversity Score):** Skor dari 0–100 untuk menilai dampak proyek terhadap keanekaragaman hayati.
+- **Garis hijau putus-putus:** Ambang batas aman **DNSH (Do No Significant Harm)** yaitu skor ≥ 70.
+- **Garis merah putus-putus:** Ambang minimum mutlak yaitu skor ≥ 50 (di bawah ini dianggap berisiko tinggi terhadap lingkungan).
+
+---
+
+### 🧐 Kesimpulan dari Grafik
+
+- **Penghematan Air (Water Savings):**
+  - Mayoritas proyek berhasil menghemat air antara **800–1200 liter**.
+  - Proyek seperti `PLTS-NTT-001`, `PLTS-JATIM-001`, dan `PLTS-NTB-001` termasuk paling efisien dalam konservasi air.
+
+- **Skor Keanekaragaman Hayati (Biodiversity Score):**
+  - Hanya sedikit proyek yang **lulus ambang DNSH (≥70)**.
+  - Beberapa proyek memiliki skor **di bawah 50**, yang artinya berisiko tinggi terhadap biodiversitas.
+  - Proyek `PLTS-JABW-001` memiliki skor tertinggi dan paling ramah lingkungan secara ekosistem.
+
+---
+
+#### 📌 Mengapa Ini Penting?
+✅ Analisis **Beyond Carbon** membantu memastikan bahwa proyek tidak hanya baik dalam mengurangi emisi karbon, tetapi juga:
+
+- Menghemat sumber daya air
+- Melindungi flora dan fauna lokal
+
+Dengan mempertimbangkan aspek ini, kita mendorong proyek yang benar-benar **berkelanjutan secara menyeluruh**.
+
+---
 
 ---
 #### 📜 Regulasi Terkait
