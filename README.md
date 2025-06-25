@@ -241,8 +241,86 @@ Data ini bantu kita melihat dampak ekonomi lokal, termasuk efek berantai dari pr
 1. Local_Economic_Impact - Indeks kontribusi terhadap ekonomi lokal
 2. SME_Inclusion - Apakah proyek melibatkan UMKM? (ya/tidak)
 3. Cost_Benefit_Ratio - Rasio antara total manfaat ekonomi dibanding biaya proyek
+#### 📘 Analisis Risiko Ekonomi (ERAF) untuk Proyek Energi Hijau
+##### 🎯 Tujuan
+Menilai risiko ekonomi proyek energi terbarukan dengan melihat:
+- Pertumbuhan Ekonomi (`GDP_Growth`)
+- Inflasi (`Inflation_Rate`)
+- Pengangguran (`Unemployment_Rate`)
+- Investasi Asing Masuk (`FDI_Inflows`)
 
-#### 🗌️ 2.5 Geospatial Dataset
+##### 📐 Rumus ERAF (Economic Risk Adjustment Factor)
+Rumus:
+
+$$
+\text{ERAF} = 1 + w_1 \cdot \frac{Ir - Ir_{base}}{Ir_{base}} + w_2 \cdot \frac{Ur - Ur_{base}}{Ur_{base}} - w_3 \cdot \frac{Gg - Gg_{base}}{Gg_{base}}
+$$
+
+**Keterangan:**
+- \( Ir \): Inflasi saat ini (`Inflation_Rate`)
+- \( Ir_{base} = 3.0\% \): Inflasi dasar
+- \( Ur \): Pengangguran saat ini (`Unemployment_Rate`)
+- \( Ur_{base} = 5.0\% \): Pengangguran dasar
+- \( Gg \): Pertumbuhan PDB saat ini (`GDP_Growth`)
+- \( Gg_{base} = 5.5\% \): PDB dasar
+- Bobot: \( w_1 = 0.4 \), \( w_2 = 0.3 \), \( w_3 = 0.3 \)
+----
+##### ✅ Contoh Perhitungan
+Jika:
+- Ir = 6%, Ur = 7%, Gg = 4%
+- Maka:
+ERAF = 1 + 0.4*(6-3)/3 + 0.3*(7-5)/5 - 0.3*(4-5)/5
+= 1 + 0.41 + 0.30.4 + 0.3*0.2
+= 1 + 0.2 + 0.12 + 0.06 = 1.38
+---
+###### 📌 Kategori Risiko
+- ERAF > 1.05 → **Tinggi**
+- 0.95 ≤ ERAF ≤ 1.05 → **Sedang**
+- ERAF < 0.95 → **Rendah**
+---
+##### 💵 Katalis Investasi (FDI)
+- FDI ≥ 4.0 → **FDI Tinggi** → Katalis hijau
+- FDI 2.5 – 3.9 → **FDI Cukup**
+- FDI < 2.5 → **FDI Rendah**
+---
+##### 🏁 Status Pendanaan
+| Syarat ERAF & FDI               | Status                        |
+|----------------------------------|-------------------------------|
+| ERAF < 1 dan FDI ≥ 4.0          | ✅ Layak Investasi Hijau      |
+| ERAF ≤ 1.05 dan FDI ≥ 2.5       | ⚠️ Cukup Layak               |
+| ERAF > 1.05 atau FDI < 2.5      | 🔴 Risiko Tinggi / FDI Lemah |
+---
+##### 📉 Visualisasi
+![image](https://github.com/user-attachments/assets/8553be72-bb87-4cc4-9f33-2904393f6145)
+**🔍 Apa yang ditampilkan grafik?****
+- Grafik menunjukkan tingkat risiko ekonomi (ERAF) untuk setiap proyek.
+  1. Sumbu X = Project_ID (nama proyek)
+  2. Sumbu Y = ERAF (Economic Risk Adjustment Factor)
+  3. Garis abu-abu horizontal = batas normal risiko (ERAF = 1.0)
+- **Warna batang:**
+  1. 🟥 Merah = Risiko Tinggi (ERAF > 1.05)
+  2. 🟧 Oranye = Risiko Sedang (ERAF antara 0.95 dan 1.05)
+  3. 🟩 Hijau = Risiko Rendah (ERAF < 0.95)
+
+**📈 Apa arti nilai ERAF?**
+- ERAF > 1: Risiko ekonomi tinggi → biaya proyek bisa naik → perlu perhatian.
+- ERAF < 1: Risiko rendah → proyek lebih stabil secara ekonomi.
+
+**🧠 Kesimpulan Grafik:**
+Sebagian besar proyek memiliki ERAF di atas 1.0, artinya:
+1. Risiko ekonomi masih cukup tinggi
+2. Bisa disebabkan oleh kombinasi seperti GDP rendah, inflasi tinggi, atau pengangguran tinggi
+3. Proyek dengan GDP sangat rendah, seperti PLTS-JATIM-001, menunjukkan risiko paling tinggi.
+---  
+##### 🧠 Tips & Regulasi
+- **Sensitivitas Makro**: Gunakan ERAF untuk uji ketahanan proyek terhadap perubahan inflasi & pertumbuhan.
+- **Katalis Investasi**: FDI tinggi = iklim investasi baik.
+- **Regulasi Penting**:
+  - 📜 UU No. 25/2007 → mendukung FDI
+  - 📜 Perpres No. 112/2022 → mendukung proyek di wilayah pengangguran tinggi
+---
+
+#### 🗌️ 5 Geospatial Dataset
 Ini data lokasi buat bantu analisis spasial, misalnya jarak ke pemukiman, atau apakah proyek berada di kawasan rawan bencana.
 1. Latitude, Longitude - Titik koordinat lokasi proyek
 2. Proximity_to_Village - Jarak ke desa terdekat (km)
