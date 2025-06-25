@@ -95,15 +95,9 @@ else:
 ```
 ---
 ##### Visualisasi GNPV
-```python
-plt.figure(figsize=(10, 6))
-plt.barh(df["Project_ID"], df["GNPV_Rp"], color=["green" if x > 0 else "red" for x in df["GNPV_Rp"]])
-plt.xlabel("GNPV (Rp)")
-plt.title("Green Net Present Value per Proyek")
-plt.grid(True)
-plt.tight_layout()
-plt.show()
-```
+![image](https://github.com/user-attachments/assets/5acd7a36-7595-40e0-8198-e87a0ff1da8c)
+
+
 ---
 ##### 📘 Keterangan:
 - Greenium artinya investor rela terima imbal hasil lebih rendah karena proyek ini ramah lingkungan 🌱
@@ -201,23 +195,8 @@ df["Rekomendasi_DNSH"] = df.apply(
 ```
 ---
 #### 📈 Visualisasi Beyond Carbon
-```python
-import matplotlib.pyplot as plt
+![image](https://github.com/user-attachments/assets/d4138d16-d6ad-4955-81bb-125cd2d83005)
 
-plt.figure(figsize=(12, 6))
-plt.bar(df["Project_ID"], df["Water_Savings"], color='skyblue', label='Water Savings (liter)')
-plt.plot(df["Project_ID"], df["Biodiversity_Impact_Score"], color='orange', marker='o', label='Biodiversity Score', linewidth=2)
-plt.axhline(70, color='green', linestyle='--', label='Ambang DNSH (≥70)')
-plt.axhline(50, color='red', linestyle='--', label='Minimum Threshold (50)')
-plt.title("Beyond Carbon: Water Savings vs Biodiversity Impact Score")
-plt.xlabel("Project ID")
-plt.ylabel("Nilai")
-plt.xticks(rotation=45)
-plt.grid(True, linestyle='--', alpha=0.5)
-plt.legend()
-plt.tight_layout()
-plt.show()
-```
 ---
 #### 📜 Regulasi Terkait
 - Perpres No. 98 Tahun 2021: Menetapkan Nilai Ekonomi Karbon dan skema perdagangan karbon di Indonesia.
@@ -252,7 +231,7 @@ $$
 - **SROI < 1** → Dampak sosial masih rendah dibanding investasi
 
 ---
-### 💸 Monetisasi Dampak Sosial
+##### 💸 Monetisasi Dampak Sosial
 Monetisasi dilakukan dengan financial proxies, seperti:
 - Jobs_Created → dikalikan upah rata-rata tahunan
 - Community Engagement → proksi nilai dari pelatihan, pertemuan publik, dll
@@ -261,7 +240,7 @@ Monetisasi dilakukan dengan financial proxies, seperti:
 
 ---
 
-## 🛑 Evaluasi Risiko Sosial
+##### 🛑 Evaluasi Risiko Sosial
 Proyek dievaluasi berdasarkan:
 | Kategori Risiko | Indikator |
 |-----------------|-----------|
@@ -272,12 +251,10 @@ Proyek dievaluasi berdasarkan:
 📌 Proyek dengan lebih dari 2 risiko tinggi akan ditandai sebagai "⚠️ Risiko Sosial Tinggi"
 
 ---
-## 📊 Visualisasi
-- Histogram `Jobs_Created` antar proyek
-- Korelasi antara `Access_to_Clean_Energy_Rate` dan `Gini_Coefficient_Impact`
-- Grafik SROI per proyek
----
-## ✅ Contoh Output SROI
+##### 📊 Visualisasi
+![image](https://github.com/user-attachments/assets/5ebefd85-c350-4063-bdf0-5cf0ad8e2bf6)
+ 
+##### ✅ Contoh Output SROI
 
 | Project_ID | Jobs_Created | SROI | Risiko_Sosial |
 |------------|--------------|------|----------------|
@@ -286,7 +263,7 @@ Proyek dievaluasi berdasarkan:
 
 ---
 
-## 🚀 Tujuan Proyek
+##### 🚀 Tujuan Proyek
 
 - Mengukur **efisiensi sosial** dari proyek energi hijau
 - Menyediakan dasar data untuk pengambilan keputusan berbasis bukti (*evidence-based policy*)
@@ -294,7 +271,7 @@ Proyek dievaluasi berdasarkan:
 
 ---
 
-## 🏷 Referensi Regulasi
+##### 🏷 Referensi Regulasi
 - **POJK 51/2017**: Keuangan Berkelanjutan
 - **SDGs 7, 10, 11**: Energi bersih, pengurangan ketimpangan, komunitas berkelanjutan
 ---
