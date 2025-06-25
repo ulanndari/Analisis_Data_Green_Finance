@@ -144,6 +144,91 @@ Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis k
 3. Environmental_Risk_Index - Skor risiko lingkungan proyek (0–100)
 4. Konteks_Lingkungan - Ringkasan isu lingkungan di lokasi proyek
 5. Peringkat_Dampak - Peringkat keseluruhan dampak proyek (misalnya: Rendah, Sedang, Tinggi)
+#### 🔢 Perhitungan CROI (Carbon Return on Investment)
+CROI digunakan untuk mengukur efisiensi investasi dalam pengurangan emisi karbon:
+$$
+\text{CROI = (Rt × Pc × N) / I₀}
+$$
+
+  Keterangan:
+- `Rt`: Pengurangan emisi tahunan (`CO2_Emissions_Reduction`)
+- `Pc`: Harga karbon per ton CO₂e (dalam Rp)
+- `I₀`: Investasi awal (`Investment_Amount`)
+- `N`: Umur proyek (`Project_Lifetime`)
+  Aturan Praktis:
+- CROI > 1 → proyek efisien secara karbon
+- CROI < 1 → proyek belum layak secara karbon
+
+---
+
+#### 🧮 Contoh Perhitungan Manual (Python)
+
+```python
+investasi_awal = 100_000_000_000
+reduksi_emisi_tahunan = 10_000
+harga_karbon_per_ton = 500_000
+umur_proyek_tahun = 10
+
+croi = (reduksi_emisi_tahunan * harga_karbon_per_ton * umur_proyek_tahun) / investasi_awal
+print(f"Hasil CROI = {croi:.2f}")
+```
+---
+#### 🧠 Evaluasi Otomatis Proyek
+```python
+import pandas as pd
+
+df = pd.read_csv("Environmental_Dataset.csv")
+
+if "Investment_Amount" not in df.columns:
+    df["Investment_Amount"] = 100_000_000_000
+if "Project_Lifetime" not in df.columns:
+    df["Project_Lifetime"] = 10
+
+df["Water_Savings"] = df["Project_ID"].apply(lambda x: 1200 if "PLTS" in x else 800)
+df["Biodiversity_Impact_Score"] = df["Environmental_Risk_Index"].apply(lambda x: max(0, min(100, 100 - x)))
+
+harga_karbon = {"rendah": 100_000, "sedang": 500_000, "tinggi": 1_000_000}
+
+for level, harga in harga_karbon.items():
+    df[f"CROI_{level}"] = (df["CO2_Reduction"] * harga * df["Project_Lifetime"]) / df["Investment_Amount"]
+    df[f"Efisiensi_Karbon_{level}"] = df[f"CROI_{level}"].apply(lambda x: "Efisien" if x > 1 else "Kurang Efisien")
+
+def rekomendasi_dnsh(water, biodiversity):
+    if water >= 1000 and biodiversity >= 70:
+        return "✅ Layak sebagai proyek hijau (DNSH)"
+    elif water >= 800 and biodiversity >= 50:
+        return "⚠️ Perlu peningkatan dampak lingkungan"
+    else:
+        return "❌ Belum memenuhi prinsip hijau"
+
+df["Rekomendasi_DNSH"] = df.apply(
+    lambda row: rekomendasi_dnsh(row["Water_Savings"], row["Biodiversity_Impact_Score"]),
+    axis=1
+)
+```
+---
+#### 📈 Visualisasi Beyond Carbon
+```python
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(12, 6))
+plt.bar(df["Project_ID"], df["Water_Savings"], color='skyblue', label='Water Savings (liter)')
+plt.plot(df["Project_ID"], df["Biodiversity_Impact_Score"], color='orange', marker='o', label='Biodiversity Score', linewidth=2)
+plt.axhline(70, color='green', linestyle='--', label='Ambang DNSH (≥70)')
+plt.axhline(50, color='red', linestyle='--', label='Minimum Threshold (50)')
+plt.title("Beyond Carbon: Water Savings vs Biodiversity Impact Score")
+plt.xlabel("Project ID")
+plt.ylabel("Nilai")
+plt.xticks(rotation=45)
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+---
+#### 📜 Regulasi Terkait
+- Perpres No. 98 Tahun 2021: Menetapkan Nilai Ekonomi Karbon dan skema perdagangan karbon di Indonesia.
+- Taksonomi Hijau Indonesia (THI): Menentukan ambang batas teknis proyek hijau, termasuk validasi berbasis CO2_Emissions_Reduction.
 ### 🧝‍♂️ 3. Social Dataset
 Aspek sosial itu penting! Ini data yang menilai apakah proyek bermanfaat atau berisiko buat masyarakat sekitar.
 1. Job_Creation - Jumlah pekerjaan yang diciptakan
