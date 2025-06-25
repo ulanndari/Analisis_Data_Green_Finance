@@ -12,7 +12,7 @@ Green Finance adalah pembiayaan proyek yang mendukung keberlanjutan lingkungan. 
 3. Menekan risiko lingkungan dalam portofolio investasi
 4. Mendorong inovasi teknologi hijau 🚀
 __________________________________________________________________________________________________________________________________________________________________________________________
-## 👋 Hai Para Eco Techno Leader, mari berpetualang bersama. saya akan mempublikasikan tugas struktur SELF DIRECTED LEARNING dengan SHARING SESSION and RESEARCH DATA GREEN FINANCE© 2025 bersama Bapak Arry Hutomo
+## 👋 Hai Para Eco Techno Leader, mari berpetualang bersama. saya akan mempublikasikan tugas struktur SELF DIRECTED LEARNING
 __________________________________________________________________________________________________________________________________________________________________________________________
 Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bukan cuma dari sisi duit 💸, tapi juga dari sisi lingkungan 🌍.
 Yuk kita bahas dari awal sampai visualisasi datanya!
