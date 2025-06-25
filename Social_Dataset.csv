@@ -1,0 +1,11 @@
+﻿Project_ID,Land_Status,Community_Support,Population_Density,Konteks_Sosial,Tingkat_Konflik
+PLTS-NTT-001,Adat,70,50,Sumba: lahan adat-konsultasi intensif,High: ⚠️⚠️⚠️
+PLTM-SUMUT-001,Negara,85,200,Tapanuli: izin BPN lancar-dukungan tinggi,Low: ⚠️
+PLTS-JATIM-001,Swasta,90,800,Surabaya: lahan swasta-masyarakat urban,Low: ⚠️
+PLTM-KALB-001,Adat,65,100,Kalbar: lahan adat-risiko konflik sedang,High: ⚠️⚠️⚠️
+PLTS-SULS-001,Negara,80,300,Makassar: izin mudah-dukungan baik,Medium: ⚠️⚠️
+PLTM-PAPU-001,Adat,60,20,Papua: lahan adat-dukungan rendah,High: ⚠️⚠️⚠️⚠️
+PLTS-NTB-001,Swasta,88,400,Lombok: lahan swasta-pariwisata mendukung,Low: ⚠️
+PLTM-ACHD-001,Negara,82,150,Aceh: izin BPN-komunitas setuju,Medium: ⚠️⚠️
+PLTS-JABW-001,Swasta,92,1000,Bandung: lahan swasta-masyarakat modern,Low: ⚠️
+PLTM-SULU-001,Adat,68,120,Sulut: lahan adat-konsultasi terbatas,High: ⚠️⚠️⚠️
