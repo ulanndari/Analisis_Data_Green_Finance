@@ -223,8 +223,6 @@ Penilaian ini memastikan bahwa proyek energi hijau juga mendukung **keadilan sos
 
 ---
 
----
-
 ##### 🚀 Tujuan Proyek
 
 - Mengukur **efisiensi sosial** dari proyek energi hijau
@@ -243,6 +241,7 @@ Data ini bantu kita melihat dampak ekonomi lokal, termasuk efek berantai dari pr
 1. Local_Economic_Impact - Indeks kontribusi terhadap ekonomi lokal
 2. SME_Inclusion - Apakah proyek melibatkan UMKM? (ya/tidak)
 3. Cost_Benefit_Ratio - Rasio antara total manfaat ekonomi dibanding biaya proyek
+
 #### 🗌️ 2.5 Geospatial Dataset
 Ini data lokasi buat bantu analisis spasial, misalnya jarak ke pemukiman, atau apakah proyek berada di kawasan rawan bencana.
 1. Latitude, Longitude - Titik koordinat lokasi proyek
