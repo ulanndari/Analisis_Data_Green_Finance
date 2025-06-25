@@ -25,7 +25,7 @@ Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 3. Default_Risk_Score - Skor risiko gagal bayar (0-100)
 4. Revenue_Stream - Perkiraan arus kas masuk tahunan dari proyek
 5. Green_Bond_Spread - Selisih imbal hasil antara obligasi hijau vs biasa. Nilai negatif = greenium
-#### 1.1 Analisis Finansial: GNPV dan Green Bond 💸
+### Analisis Finansial: GNPV dan Green Bond 💸
 Untuk menilai apakah proyek hijau ini **layak dibiayai**, kita hitung sesuatu yang namanya **Green Net Present Value (GNPV)**.
 ##### 🔍 Apa Itu GNPV?
 GNPV itu versi “ramah lingkungan” dari NPV biasa. Bedanya, kita **tambahkan manfaat lingkungan** (seperti pengurangan emisi CO₂) ke dalam arus kas proyek.
