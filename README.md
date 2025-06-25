@@ -222,11 +222,83 @@ plt.show()
 #### 📜 Regulasi Terkait
 - Perpres No. 98 Tahun 2021: Menetapkan Nilai Ekonomi Karbon dan skema perdagangan karbon di Indonesia.
 - Taksonomi Hijau Indonesia (THI): Menentukan ambang batas teknis proyek hijau, termasuk validasi berbasis CO2_Emissions_Reduction.
+----
 ### 🧝‍♂️ 3. Social Dataset
 Aspek sosial itu penting! Ini data yang menilai apakah proyek bermanfaat atau berisiko buat masyarakat sekitar.
 1. Job_Creation - Jumlah pekerjaan yang diciptakan
 2. Community_Involvement - Level partisipasi masyarakat (rendah–tinggi)
 3. Social_Risk_Flag - Apakah ada potensi konflik sosial (ya/tidak)
+#### 🧾 Dataset: `Social_Dataset.csv`
+Dataset ini mencakup berbagai indikator sosial dari proyek energi hijau di beberapa wilayah. File berisi kolom-kolom berikut:
+| Kolom | Deskripsi |
+|-------|-----------|
+| `Project_ID` | ID unik tiap proyek |
+| `Jobs_Created` | Jumlah lapangan kerja baru yang tercipta |
+| `Community_Engagement_Score` | Skor partisipasi masyarakat (0-100) |
+| `Access_to_Clean_Energy_Rate` | Persentase rumah tangga yang kini mendapat akses energi bersih |
+| `Gini_Coefficient_Impact` | Dampak proyek terhadap ketimpangan ekonomi lokal |
+| `Investment_Cost` | Total investasi proyek (Rp) |
+| `Social_Benefit_Estimate` | Estimasi manfaat sosial yang dimonetisasi (Rp) |
+
+---
+
+#### 📈 Perhitungan Utama
+##### 🔁 SROI (Social Return on Investment)
+$$
+\text{SROI} = \frac{\text{Social Benefit Estimate}}{\text{Investment Cost}}
+$$
+
+- **SROI > 1** → Investasi sosial efisien
+- **SROI < 1** → Dampak sosial masih rendah dibanding investasi
+
+---
+### 💸 Monetisasi Dampak Sosial
+Monetisasi dilakukan dengan financial proxies, seperti:
+- Jobs_Created → dikalikan upah rata-rata tahunan
+- Community Engagement → proksi nilai dari pelatihan, pertemuan publik, dll
+- Access to Clean Energy → estimasi penghematan biaya energi
+- Gini Coefficient Impact → model pengurangan ketimpangan diukur dari redistribusi pendapatan
+
+---
+
+## 🛑 Evaluasi Risiko Sosial
+Proyek dievaluasi berdasarkan:
+| Kategori Risiko | Indikator |
+|-----------------|-----------|
+| Risiko Partisipasi Rendah | `Community_Engagement_Score < 50` |
+| Risiko Eksklusi Energi | `Access_to_Clean_Energy_Rate < 60%` |
+| Risiko Ketimpangan | `Gini_Coefficient_Impact > 0.05` (worsening inequality) |
+
+📌 Proyek dengan lebih dari 2 risiko tinggi akan ditandai sebagai "⚠️ Risiko Sosial Tinggi"
+
+---
+## 📊 Visualisasi
+- Histogram `Jobs_Created` antar proyek
+- Korelasi antara `Access_to_Clean_Energy_Rate` dan `Gini_Coefficient_Impact`
+- Grafik SROI per proyek
+---
+## ✅ Contoh Output SROI
+
+| Project_ID | Jobs_Created | SROI | Risiko_Sosial |
+|------------|--------------|------|----------------|
+| PLTS_A     | 15           | 1.25 | Rendah          |
+| PLTB_B     | 5            | 0.67 | ⚠️ Tinggi        |
+
+---
+
+## 🚀 Tujuan Proyek
+
+- Mengukur **efisiensi sosial** dari proyek energi hijau
+- Menyediakan dasar data untuk pengambilan keputusan berbasis bukti (*evidence-based policy*)
+- Mendukung prinsip **Just Energy Transition** di daerah tertinggal dan terpencil
+
+---
+
+## 🏷 Referensi Regulasi
+- **POJK 51/2017**: Keuangan Berkelanjutan
+- **SDGs 7, 10, 11**: Energi bersih, pengurangan ketimpangan, komunitas berkelanjutan
+---
+
 #### 📈 4. Economic Dataset
 Data ini bantu kita melihat dampak ekonomi lokal, termasuk efek berantai dari proyek.
 1. Local_Economic_Impact - Indeks kontribusi terhadap ekonomi lokal
