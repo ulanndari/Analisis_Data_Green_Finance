@@ -41,63 +41,21 @@ $$
 - `N`: Umur proyek (misal: 10 tahun)  
 - `I₀`: Investasi awal proyek
 ---
-##### ⚙️ Contoh Perhitungan Manual
-
-```python
-investasi = 100_000_000_000       # I₀
-cashflow = 20_000_000_000         # CFₜ
-eksternalitas = 5_000_000_000     # Eₜ
-r = 0.05                          # diskonto
-N = 10                            # umur proyek
-
-gnpv = 0
-for t in range(1, N + 1):
-    nilai_sekarang = (cashflow + eksternalitas) / ((1 + r) ** t)
-    gnpv += nilai_sekarang
-gnpv -= investasi
-
-print("GNPV: Rp", round(gnpv))
-📤 Output:
-GNPV: Rp 93043373230
-✅ Proyek ini LAYAK secara finansial dan lingkungan
-```
-
----
-##### 🧮 Perhitungan Otomatis untuk Semua Proyek
-```python
-import pandas as pd
-
-df = pd.read_csv("Financial_Dataset.csv")
-
-umur_proyek = 10
-diskonto = 0.05
-emisi_ton_per_tahun = 100
-harga_karbon = 96000  # berdasarkan pasar karbon Indonesia (2025)
-
-def hitung_gnpv(revenue, investment):
-    eksternalitas = emisi_ton_per_tahun * harga_karbon
-    gnpv = 0
-    for t in range(1, umur_proyek + 1):
-        nilai = (revenue + eksternalitas) / ((1 + diskonto) ** t)
-        gnpv += nilai
-    return round(gnpv - investment, 2)
-
-df["GNPV_Rp"] = df.apply(lambda row: hitung_gnpv(row["Revenue_Stream"], row["Investment_Cost"]), axis=1)
-df["Kelayakan"] = df["GNPV_Rp"].apply(lambda x: "Layak ✅" if x > 0 else "Tidak Layak ❌")
-```
----
-##### 📉 Evaluasi Green Bond Spread (Greenium)
-```python
-if "Green_Bond_Spread" in df.columns:
-    df["Greenium_Status"] = df["Green_Bond_Spread"].apply(lambda x: "Greenium ✅" if x < 0 else "Normal ⚠️")
-else:
-    df["Greenium_Status"] = "Data Tidak Ada"
-```
----
 ##### Visualisasi GNPV
 ![image](https://github.com/user-attachments/assets/5acd7a36-7595-40e0-8198-e87a0ff1da8c)
-
-
+Grafik ini menunjukkan nilai GNPV untuk berbagai proyek energi terbarukan, seperti PLTS (Pembangkit Listrik Tenaga Surya) dan PLTM (Pembangkit Listrik Tenaga Minihidro) dari seluruh Indonesia.
+##### ✅ Apa itu GNPV?
+GNPV adalah nilai bersih proyek dengan mempertimbangkan manfaat lingkungan (seperti pengurangan emisi karbon) dan manfaat ekonomi jangka panjang. Jika GNPV > 0, maka proyek tersebut:
+- Layak secara finansial
+- Memberikan dampak lingkungan yang positif
+##### 📈 Penjelasan Grafik:
+- **Sumbu Y (vertikal):** Kode proyek (misalnya: PLTS-NTB-001)
+- **Sumbu X (horizontal):** Nilai GNPV dalam Rupiah
+- **Warna batang:** Menunjukkan besar kecilnya GNPV
+##### 🔍 Kesimpulan:
+- Semua proyek memiliki GNPV positif → berarti layak dan hijau 🌱
+- Nilai GNPV antar proyek hampir sama (sekitar Rp70 juta)
+- Cocok untuk masuk dalam program pembiayaan hijau (green finance)
 ---
 ##### 📘 Keterangan:
 - Greenium artinya investor rela terima imbal hasil lebih rendah karena proyek ini ramah lingkungan 🌱
