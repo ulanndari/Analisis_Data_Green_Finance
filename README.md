@@ -104,8 +104,6 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-![image](https://github.com/user-attachments/assets/7360d443-7187-4320-abd2-d6184aed8f80)
-
 ---
 ##### 📘 Keterangan:
 - Greenium artinya investor rela terima imbal hasil lebih rendah karena proyek ini ramah lingkungan 🌱
@@ -127,9 +125,7 @@ plt.show()
 - **POJK No. 51/POJK.03/2017**  
   Mengatur tentang Rencana Aksi Keuangan Berkelanjutan (RAKB). GNPV dapat digunakan sebagai bagian dari analisis kelayakan proyek dalam laporan ini.
 ---
-
 ##### 💡 **Tips Teknis:**
-
 - **Valuasi Eksternalitas (`Eₜ`)**  
   Untuk menghitung manfaat lingkungan seperti pengurangan emisi CO₂ atau penghematan air, gunakan sumber harga yang kredibel. Contoh: pasar karbon Indonesia, laporan World Bank, atau lembaga lingkungan nasional.
 
@@ -146,10 +142,7 @@ Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis k
 5. Peringkat_Dampak - Peringkat keseluruhan dampak proyek (misalnya: Rendah, Sedang, Tinggi)
 #### 🔢 Perhitungan CROI (Carbon Return on Investment)
 CROI digunakan untuk mengukur efisiensi investasi dalam pengurangan emisi karbon:
-$$
-\text{CROI} = \frac{R_t \times P_c \times N}{I_0}
-$$
-
+CROI = (Rₜ × P_c × N) / I₀
   Keterangan:
 - `Rt`: Pengurangan emisi tahunan (`CO2_Emissions_Reduction`)
 - `Pc`: Harga karbon per ton CO₂e (dalam Rp)
