@@ -297,7 +297,7 @@ ERAF = 1 + 0.4*(6-3)/3 + 0.3*(7-5)/5 - 0.3*(4-5)/5
   1. Sumbu X = Project_ID (nama proyek)
   2. Sumbu Y = ERAF (Economic Risk Adjustment Factor)
   3. Garis abu-abu horizontal = batas normal risiko (ERAF = 1.0)
-- **Warna batang:**
+  **Warna batang:**
   1. 🟥 Merah = Risiko Tinggi (ERAF > 1.05)
   2. 🟧 Oranye = Risiko Sedang (ERAF antara 0.95 dan 1.05)
   3. 🟩 Hijau = Risiko Rendah (ERAF < 0.95)
@@ -325,9 +325,117 @@ Ini data lokasi buat bantu analisis spasial, misalnya jarak ke pemukiman, atau a
 1. Latitude, Longitude - Titik koordinat lokasi proyek
 2. Proximity_to_Village - Jarak ke desa terdekat (km)
 3. Disaster_Zone_Flag - Apakah lokasi termasuk zona rawan bencana? (ya/tidak)
-#### 📌 Kenapa ini penting?
+###### 🌍 Geospatial Risk Index (GRI) – Green Finance Analysis
+
+Proyek ini menganalisis **risiko spasial** dari proyek energi terbarukan (PLTS, PLTM) berdasarkan informasi lokasi. Analisis dilakukan menggunakan pendekatan **Geospatial Risk Index (GRI)** sebagai bagian dari praktik **Green Finance**.
+
+---
+
+##### 📌 Tujuan
+
+- Menilai **risiko lingkungan berbasis lokasi** proyek energi
+- Mengklasifikasikan proyek berdasarkan tingkat risiko: Low, Medium, High
+- Mendukung seleksi proyek yang sesuai **Taksonomi Hijau Indonesia (THI)** dan prinsip **Do No Significant Harm (DNSH)**
+
+---
+
+##### 📈 Metode Perhitungan GRI
+GRI dihitung dengan rumus:
+
+\[
+\text{GRI} = (w_1 \times S_{\text{hazard}}) + (w_2 \times S_{\text{proximity}}) + (w_3 \times S_{\text{landuse}})
+\]
+
+Di mana:
+
+- \( S_{\text{hazard}} \) = Skor risiko bencana alam (0–1)
+- \( S_{\text{proximity}} \) = Skor kedekatan dengan kawasan lindung (0–1)
+- \( S_{\text{landuse}} \) = Skor risiko perubahan lahan (0–1)
+- \( w_1, w_2, w_3 \) = Bobot masing-masing komponen (misal: 0.4, 0.3, 0.3)
+---
+
+**Komponen:**
+
+- `S_hazard`: Risiko bencana alam (banjir, gempa, longsor)
+- `S_proximity`: Kedekatan dengan kawasan lindung (hutan, taman nasional)
+- `S_landuse`: Risiko perubahan lahan (deforestasi, konversi hutan)
+- `w₁, w₂, w₃`: Bobot masing-masing faktor (misalnya: 0.4, 0.3, 0.3)
+
+---
+
+##### ✅ Aturan Praktis Penilaian Risiko
+
+| Nilai GRI | Tingkat Risiko     | Tindakan                                                    |
+|-----------|--------------------|--------------------------------------------------------------|
+| > 0.7     | **High Risk 🚨**    | Wajib due diligence tambahan, proyek bisa ditolak           |
+| 0.4–0.7   | **Medium Risk ⚠️**  | Perlu mitigasi risiko, analisis tambahan                    |
+| < 0.4     | **Low Risk ✅**      | Lokasi aman, tidak perlu analisis tambahan                  |
+
+---
+
+##### 📊 Contoh Output
+
+| Project_ID     | Lokasi     | GRI  | Risk Level                   |
+|----------------|------------|------|------------------------------|
+| PLTS-NTT-001   | Sumba      | 0.20 | Low Risk ✅                   |
+| PLTM-SUMUT-001 | Tapanuli   | 0.39 | Low Risk ✅                   |
+| PLTS-JATIM-001 | Surabaya   | 0.51 | Medium Risk ⚠️                |
+| PLTM-PAPU-001  | Papua      | 0.81 | High Risk 🚨 (due diligence)  |
+
+---
+##### visualisasi data
+![image](https://github.com/user-attachments/assets/e0209b24-038a-4722-8711-d60d5c852fa7)
+**📊 Apa Maksud Visualisasi GRI?**
+- Visualisasi GRI adalah grafik batang (bar chart) yang menunjukkan:
+ 1. Tingkat risiko geospasial (GRI) dari setiap proyek energi terbarukan (PLTS, PLTM).
+ 2. Setiap batang mewakili 1 proyek, dan tinggi batang menunjukkan nilai GRI-nya.
+
+**Warna batang menunjukkan tingkat risikonya:**
+ 1. 🟥 Merah = Risiko tinggi (GRI > 0.7)
+ 2. 🟧 Oranye = Risiko sedang (GRI antara 0.4 – 0.7)
+ 3. 🟩 Hijau = Risiko rendah (GRI < 0.4)
+
+**🎯 Tujuannya apa?**
+Agar kita bisa:
+1. Membandingkan proyek mana yang lebih berisiko secara lokasi
+2. Menandai proyek berbahaya yang perlu due diligence tambahan
+3. Mendukung keputusan investasi berbasis data lokasi dan lingkungan
+---
+##### 🛠️ Teknologi & Data Sumber
+
+- **Python Libraries**: `pandas`, `matplotlib`
+- **Sumber spasial resmi** (untuk penentuan skor):
+  - [Ina-Geoportal](https://tanahair.indonesia.go.id)
+  - [KLHK PIPPIB](https://pippib.menlhk.go.id)
+  - [BNPB](https://bnpb.go.id)
+  - [BMKG](https://bmkg.go.id)
+
+---
+
+##### 📥 Catatan
+
+- Analisis ini **tidak menggunakan data GPS (latitude/longitude)**.
+- Skor spasial diperoleh dari interpretasi **peta publik dan dokumen resmi**.
+- Pendekatan ini cocok untuk seleksi proyek **green finance dan investasi ESG**.
+---
+
+# 📌 Kenapa ini penting?
 Karena proyek yang bagus itu gak cuma menghasilkan uang, tapi juga:
 1. 🌍 Melindungi lingkungan
 2. 👥 Menguntungkan masyarakat
 3. 💼 Mendorong ekonomi lokal
 4. 📉 Sesuai konteks lokasi
+-----
+
+# 👋 Terima Kasih semua
+Terima kasih sudah mengikuti petualangan analisis Green Finance ini dari awal sampai akhir!
+Lewat proyek ini, kita belajar bareng gimana caranya menilai proyek energi terbarukan secara lengkap – bukan cuma dari sisi untung rugi 💸, tapi juga dari sisi lingkungan 🌍, sosial 👥, ekonomi lokal 📉, dan lokasi 📍.
+****Semoga analisis ini bisa bantu kamu:****
+- Paham pentingnya pembiayaan yang berkelanjutan
+- Tahu cara membaca data & membuat keputusan berbasis bukti
+- Lebih peduli pada masa depan bumi dan masyarakat kita 💚
+
+****Kalau ada saran, pertanyaan, atau mau diskusi, yuk ngobrol bareng!
+Sampai jumpa di proyek hijau berikutnya ✨****
+
+****"Karena bumi butuh lebih banyak pahlawan data yang cinta lingkungan." 🌏💻****
