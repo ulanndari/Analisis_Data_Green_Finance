@@ -86,13 +86,26 @@ df["GNPV_Rp"] = df.apply(lambda row: hitung_gnpv(row["Revenue_Stream"], row["Inv
 df["Kelayakan"] = df["GNPV_Rp"].apply(lambda x: "Layak ✅" if x > 0 else "Tidak Layak ❌")
 ```
 ---
-##### 1.3 📉 Evaluasi Green Bond Spread (Greenium)
+##### 📉 Evaluasi Green Bond Spread (Greenium)
 ```python
 if "Green_Bond_Spread" in df.columns:
     df["Greenium_Status"] = df["Green_Bond_Spread"].apply(lambda x: "Greenium ✅" if x < 0 else "Normal ⚠️")
 else:
     df["Greenium_Status"] = "Data Tidak Ada"
 ```
+---
+##### Visualisasi GNPV
+```python
+plt.figure(figsize=(10, 6))
+plt.barh(df["Project_ID"], df["GNPV_Rp"], color=["green" if x > 0 else "red" for x in df["GNPV_Rp"]])
+plt.xlabel("GNPV (Rp)")
+plt.title("Green Net Present Value per Proyek")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/7360d443-7187-4320-abd2-d6184aed8f80)
+
 ---
 ##### 📘 Keterangan:
 - Greenium artinya investor rela terima imbal hasil lebih rendah karena proyek ini ramah lingkungan 🌱
