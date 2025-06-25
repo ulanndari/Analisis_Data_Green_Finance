@@ -431,7 +431,7 @@ Karena proyek yang bagus itu gak cuma menghasilkan uang, tapi juga:
 
 # 👋 Terima Kasih semua
 Terima kasih sudah mengikuti petualangan analisis Green Finance ini dari awal sampai akhir!
-Lewat proyek ini, kita belajar bareng gimana caranya menilai proyek energi terbarukan secara lengkap – bukan cuma dari sisi untung rugi 💸, tapi juga dari sisi lingkungan 🌍, sosial 👥, ekonomi lokal 📉, dan lokasi 📍.
+Lewat proyek ini, kita belajar bareng gimana caranya menilai proyek energi terbarukan secara lengkap, bukan cuma dari sisi untung rugi 💸, tapi juga dari sisi lingkungan 🌍, sosial 👥, ekonomi lokal 📉, dan lokasi 📍.
 
 ****Semoga analisis ini bisa bantu kamu:****
 - Paham pentingnya pembiayaan yang berkelanjutan
