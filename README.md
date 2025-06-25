@@ -199,13 +199,29 @@ Proyek dievaluasi berdasarkan:
 ---
 ##### 📊 Visualisasi
 ![image](https://github.com/user-attachments/assets/5ebefd85-c350-4063-bdf0-5cf0ad8e2bf6)
- 
-##### ✅ Contoh Output SROI
 
-| Project_ID | Jobs_Created | SROI | Risiko_Sosial |
-|------------|--------------|------|----------------|
-| PLTS_A     | 15           | 1.25 | Rendah          |
-| PLTB_B     | 5            | 0.67 | ⚠️ Tinggi        |
+- **Sumbu X:** Kode proyek (contoh: PLTS-NTT-001, PLTM-KALB-001)
+- **Sumbu Y:** Nilai SROI
+- **Garis merah putus-putus:** Ambang kelayakan minimum yaitu **SROI = 1**
+- **Batang hijau:** Nilai SROI aktual masing-masing proyek
+
+---
+
+##### ✅ Hasil Analisis:
+
+- Semua proyek memiliki **SROI jauh di atas 1**, artinya memberikan dampak sosial yang tinggi.
+- Proyek `PLTS-JATIM-001` dan `PLTS-SULS-001` mencetak nilai tertinggi (~17), menunjukkan manfaat sosial yang sangat besar.
+- Tidak ada proyek yang mendekati batas minimum → semua layak secara sosial.
+---
+##### 🌍 Kenapa Ini Penting?
+Dengan menghitung SROI, kita tidak hanya fokus pada keuntungan finansial atau dampak lingkungan, tapi juga:
+- Apakah proyek menciptakan pekerjaan?
+- Apakah masyarakat lokal mendapatkan manfaat nyata?
+- Apakah kesenjangan sosial bisa dikurangi?
+  
+Penilaian ini memastikan bahwa proyek energi hijau juga mendukung **keadilan sosial dan kesejahteraan masyarakat lokal**.
+
+---
 
 ---
 
