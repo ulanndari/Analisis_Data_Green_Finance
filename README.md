@@ -18,7 +18,7 @@ Di proyek ini kita belajar bareng gimana cara menilai kelayakan proyek hijau, bu
 Yuk kita bahas dari awal sampai visualisasi datanya!
 ### 📚 Penjelasan Dataset yang Dipakai
 Sebelum masuk ke rumus dan kodingan, yuk kenalan dulu sama jenis-jenis data yang kita pakai. Proyek ini pakai pendekatan yang menyeluruh, gak cuma lihat aspek finansial aja, tapi juga dampak lingkungan, sosial, ekonomi, dan lokasi proyek. Berikut penjelasan singkat tiap bagian:
-### 📊 1. Financial Dataset
+# 📊 1. Financial Dataset
 Ini data utama buat ngitung kelayakan proyek dari sisi uang dan risiko.
 1. Investment_Amount - Jumlah uang yang diinvestasikan (Rp)
 2. Loan_Interest_Rate - Suku bunga pinjaman (% per tahun)
@@ -85,7 +85,8 @@ GNPV adalah nilai bersih proyek dengan mempertimbangkan manfaat lingkungan (sepe
   Jika `Green_Bond_Spread` bernilai negatif, artinya proyek mendapat **greenium**. Ini menunjukkan investor bersedia menerima imbal hasil lebih rendah karena percaya proyek tersebut berdampak positif bagi lingkungan.  
   ✔️ Greenium = sinyal bahwa proyek ramah lingkungan = lebih disukai pasar!
 ---
-### 🌿 2. Environmental Dataset
+
+# 🌿 2. Environmental Dataset
 Ngasih gambaran tentang dampak proyek terhadap lingkungan. Cocok buat analisis keberlanjutan.
 1. CO2_Reduction - Emisi CO₂ yang dikurangi (ton/tahun)
 2. Energy_Output - Energi bersih yang dihasilkan (kWh/tahun)
@@ -148,7 +149,8 @@ Dengan mempertimbangkan aspek ini, kita mendorong proyek yang benar-benar **berk
 - Perpres No. 98 Tahun 2021: Menetapkan Nilai Ekonomi Karbon dan skema perdagangan karbon di Indonesia.
 - Taksonomi Hijau Indonesia (THI): Menentukan ambang batas teknis proyek hijau, termasuk validasi berbasis CO2_Emissions_Reduction.
 ----
-### 🧝‍♂️ 3. Social Dataset
+
+# 🧝‍♂️ 3. Social Dataset
 Aspek sosial itu penting! Ini data yang menilai apakah proyek bermanfaat atau berisiko buat masyarakat sekitar.
 1. Job_Creation - Jumlah pekerjaan yang diciptakan
 2. Community_Involvement - Level partisipasi masyarakat (rendah–tinggi)
@@ -236,7 +238,7 @@ Penilaian ini memastikan bahwa proyek energi hijau juga mendukung **keadilan sos
 - **SDGs 7, 10, 11**: Energi bersih, pengurangan ketimpangan, komunitas berkelanjutan
 ---
 
-#### 📈 4. Economic Dataset
+# 📈 4. Economic Dataset
 Data ini bantu kita melihat dampak ekonomi lokal, termasuk efek berantai dari proyek.
 1. Local_Economic_Impact - Indeks kontribusi terhadap ekonomi lokal
 2. SME_Inclusion - Apakah proyek melibatkan UMKM? (ya/tidak)
@@ -320,7 +322,7 @@ Sebagian besar proyek memiliki ERAF di atas 1.0, artinya:
   - 📜 Perpres No. 112/2022 → mendukung proyek di wilayah pengangguran tinggi
 ---
 
-#### 🗌️ 5 Geospatial Dataset
+# 🗌️ 5 Geospatial Dataset
 Ini data lokasi buat bantu analisis spasial, misalnya jarak ke pemukiman, atau apakah proyek berada di kawasan rawan bencana.
 1. Latitude, Longitude - Titik koordinat lokasi proyek
 2. Proximity_to_Village - Jarak ke desa terdekat (km)
