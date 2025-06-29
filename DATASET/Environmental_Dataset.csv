@@ -1,0 +1,11 @@
+﻿Project_ID,CO2_Reduction,Energy_Output,Environmental_Risk_Index,Konteks_Lingkungan,Peringkat_Dampak
+PLTS-NTT-001,75000,25000,45,Sumba: radiasi matahari tinggi-rawan kekeringan,High: 🌿🌿🌿🌿
+PLTM-SUMUT-001,30000,10000,60,Tapanuli: banjir musiman-debit air stabil,Medium: 🌿🌿🌿
+PLTS-JATIM-001,90000,30000,30,Surabaya: risiko rendah-efisiensi tinggi,High: 🌿🌿🌿🌿🌿
+PLTM-KALB-001,35000,12000,55,Kalbar: rawan banjir-hutan lindung dekat,Medium: 🌿🌿🌿
+PLTS-SULS-001,60000,20000,40,Makassar: cuaca stabil-risiko sedang,High: 🌿🌿🌿🌿
+PLTM-PAPU-001,40000,15000,70,Papua: gempa tinggi-akses sulit,Medium: 🌿🌿🌿
+PLTS-NTB-001,80000,28000,35,Lombok: risiko rendah-pariwisata hijau,High: 🌿🌿🌿🌿
+PLTM-ACHD-001,32000,11000,65,Aceh: banjir musiman-sungai kuat,Medium: 🌿🌿🌿
+PLTS-JABW-001,95000,32000,25,Bandung: cuaca ideal-risiko minimal,High: 🌿🌿🌿🌿🌿
+PLTM-SULU-001,36000,13000,50,Sulut: gempa sedang-debit air baik,Medium: 🌿🌿🌿

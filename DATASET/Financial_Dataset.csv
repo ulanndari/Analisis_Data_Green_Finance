@@ -1,0 +1,11 @@
+﻿Project_ID,Investment_Cost,Revenue_Stream,Debt_Ratio,Payment_Delay,Konteks_Proyek,Status_Rank
+PLTS-NTT-001,150,12.5,0.65,30,PLTS di Sumba-biaya logistik tinggi-pendanaan dari obligasi hijau,Medium: ★★★☆☆
+PLTM-SUMUT-001,80,6.8,0.55,15,PLTM di Tapanuli-akses mudah ke jaringan PLN,Low: ★★☆☆☆
+PLTS-JATIM-001,200.23,18,0.7,45,PLTS besar di Surabaya-permintaan pasar tinggi,High: ★★★★☆
+PLTM-KALB-001,90,7.2,0.6,20,PLTM di Kalimantan Barat-tantangan lahan adat,Medium: ★★★☆☆
+PLTS-SULS-001,125.5,10,0.5,10,PLTS di Makassar-efisiensi tinggi distribusi,Low: ★☆☆☆☆
+PLTM-PAPU-001,100,8,0.75,60,PLTM di Papua-lokasi terisolasi-risiko tinggi,High: ★★★★★
+PLTS-NTB-001,180,15,0.68,25,PLTS di Lombok-didukung pariwisata hijau,Medium: ★★★☆☆
+PLTM-ACHD-001,85,6.5,0.58,12,PLTM di Aceh-akses sungai stabil,Low: ★★☆☆☆
+PLTS-JABW-001,220,20,0.72,40,PLTS di Bandung-pasar besar-keterlambatan PLN,High: ★★★★☆
+PLTM-SULU-001,95,7.5,0.62,18,PLTM di Sulawesi Utara-dukungan lokal baik,Medium: ★★★☆☆
